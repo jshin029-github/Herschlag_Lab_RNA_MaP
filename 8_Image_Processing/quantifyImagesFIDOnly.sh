@@ -42,7 +42,7 @@ rnamap_scripts="/home/groups/herschla/rna_map/scripts"
 
 roff_dir="./Roff"
 fluor_dir="./CPfluor"
-gv_path="$rnamap_scripts/image_processing_scripts"
+gv_path=$IMAGING_DIR
 log_dir="./Logfile"
 ###########################
 
@@ -60,5 +60,5 @@ do
     mkdir -p $roff_dir/$s
     mkdir -p $fluor_dir/$s
     mkdir -p $log_dir/$s
-    sbatch $rnamap_scripts/image_processing_scripts/quantify_images_FID.sbatch $s $seq_dir $roff_dir/$s $fluor_dir/$s $gv_path $log_dir/$s
+    sbatch $IMAGING_DIR/quantify_images_FID.sbatch $s $seq_dir $roff_dir/$s $fluor_dir/$s $gv_path $log_dir/$s
 done

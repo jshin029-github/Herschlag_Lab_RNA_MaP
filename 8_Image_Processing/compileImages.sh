@@ -64,9 +64,9 @@ fi
 ###### BEGIN SCRIPT #######
 # Setup env
 module load python/3.6.1
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_3_6_1/bin/activate
+source $py3env/bin/activate
 
 # How to call python script:
 # python3 compileImages.py <pattern> <conditions.txt> <Ntiles> <Image Directory>
 
-python3 /home/groups/herschla/rna_map/scripts/new_scripts/compileImages.py $pattern $conditions_file $Ntiles $out_dir
+python3 $SCRIPT_DIR/compileImages.py $pattern $conditions_file $Ntiles $out_dir

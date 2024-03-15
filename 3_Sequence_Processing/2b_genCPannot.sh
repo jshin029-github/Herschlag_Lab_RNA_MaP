@@ -7,14 +7,14 @@
 #SBATCH --time=4:00:00
 
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_2_7_13/bin/activate
+source $py2env/bin/activate
 
 ##### To modify ######
-cpseq="/scratch/groups/herschla/CVJNL_Experiments/seq/withBCs_CVJNL.CPseq.gz"    # withBCs___CPseq.gz
-outfile="/scratch/groups/herschla/CVJNL_Experiments/seq/CVJNL.CPannot.gz"  # CPannot.gz
+cpseq=""    # withBCs___CPseq.gz
+outfile=""  # CPannot.gz
 
 
-prebarfile="/scratch/groups/herschla/CVJNL_Experiments/all_barcode_assignments.csv"
+prebarfile="" # tsv mapping barcodes to variant number
 ######################
 
 ## OTHER VARIABLES ###
@@ -22,4 +22,4 @@ barcodecol="7"
 ######################
 
 ###### BEGIN SCRIPT #######
-python /home/groups/herschla/rna_map/scripts/new_scripts/annotateClusters.py  $cpseq $prebarfile $outfile $barcodecol
+python $SCRIPT_DIR/annotateClusters.py  $cpseq $prebarfile $outfile $barcodecol

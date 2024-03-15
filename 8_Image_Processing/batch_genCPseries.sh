@@ -26,11 +26,6 @@ fi
 ###########################
 
 
-###### OTHER VARIABLES ####
-script_dir="/home/groups/herschla/rna_map/scripts/new_scripts"
-###########################
-
-
 ###### USER INPUTS ########
 # pattern is the common substring shared by each set of images (will likely be 'equilibrium')
 pattern=$1
@@ -40,6 +35,6 @@ pattern=$1
 ###### BEGIN SCRIPT #######
 for im_dir in *$pattern*/
 do
-   	sbatch $script_dir/genCPseries.sh $im_dir $seq_dir $(pwd)
+   	sbatch $SCRIPT_DIR/genCPseries.sh $im_dir $seq_dir $(pwd)
 done
 

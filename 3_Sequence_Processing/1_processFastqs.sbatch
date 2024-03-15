@@ -29,6 +29,6 @@ r2=$3
 
 
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_2_7_13/bin/activate
+source $py2env/bin/activate
 
-python /home/groups/herschla/rna_map/scripts/array_fitting_tools/bin/processFastqUpdated.py -r1 $r1 -r2 $r2 -o "$chip".CPseq.gz -s /home/groups/herschla/rna_map/scripts/array_fitting_tools/bin/NUC.4.4
+python $ARRAY_TOOLS_DIR/bin/processFastqUpdated.py -r1 $r1 -r2 $r2 -o "$chip".CPseq.gz -s $ARRAY_TOOLS_DIR/bin/NUC.4.4

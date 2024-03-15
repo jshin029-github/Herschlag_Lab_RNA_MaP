@@ -33,6 +33,6 @@ outdir=$2
 mkdir $outdir
 
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_2_7_13/bin/activate
+source $py2env/bin/activate
 
-python /home/groups/herschla/rna_map/scripts/image_processing_scripts/CPscripts/splitCPseqIntoTiles.py $CPseq -o $outdir -s bottom
+python $IMAGING_DIR/CPscripts/splitCPseqIntoTiles.py $CPseq -o $outdir -s bottom

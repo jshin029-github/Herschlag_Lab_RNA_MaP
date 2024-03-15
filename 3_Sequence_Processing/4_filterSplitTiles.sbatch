@@ -54,7 +54,7 @@ done
 # Next, flag the filtered CPseq and merge the split tiles
 
 module load python/3.6.1
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_3_6_1/bin/activate
+source $py3env/bin/activate
 
 
 echo "Flagging and merging FID files"
@@ -65,7 +65,7 @@ for file_name in "${fid_arr[@]}"
 do
   filehandle=$(basename "$file_name")
 
-  python3 /home/groups/herschla/rna_map/scripts/new_scripts/writeSetFlagtoCPseq.py -i "$file_name" -f FID -o "$fid_dir""FID_flagged_$filehandle"
+  python3 $SCRIPT_DIR/writeSetFlagtoCPseq.py -i "$file_name" -f FID -o "$fid_dir""FID_flagged_$filehandle"
 
   rm $file_name
 done
@@ -78,7 +78,7 @@ anyRNA_arr=($(find "$anyRNA_dir" -name "*.CPseq"))
 for file_name in "${anyRNA_arr[@]}"
 do
   filehandle=$(basename "$file_name")
-  python3 /home/groups/herschla/rna_map/scripts/new_scripts/writeSetFlagtoCPseq.py -i "$file_name" -f anyRNA -o "$anyRNA_dir""anyRNA_flagged_$filehandle"
+  python3 $SCRIPT_DIR/writeSetFlagtoCPseq.py -i "$file_name" -f anyRNA -o "$anyRNA_dir""anyRNA_flagged_$filehandle"
   rm $file_name
 done
 
@@ -90,7 +90,7 @@ phiX_arr=($(find "$phiX_dir" -name "*.CPseq"))
 for file_name in "${phiX_arr[@]}"
 do
   filehandle=$(basename "$file_name")
-  python3 /home/groups/herschla/rna_map/scripts/new_scripts/writeSetFlagtoCPseq.py -i "$file_name" -f phiX -o "$phiX_dir""phiX_flagged_$filehandle"
+  python3 $SCRIPT_DIR/writeSetFlagtoCPseq.py -i "$file_name" -f phiX -o "$phiX_dir""phiX_flagged_$filehandle"
   rm $file_name
 done
 
