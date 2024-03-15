@@ -38,6 +38,4 @@ outfile=withBCs_$CPseq # note this does not work if CPseq has a filepath!
 module load python/3.6.1
 source /home/groups/herschla/rna_map/scripts/new_scripts/venv_3_6_1/bin/activate
 
-gunzip $CPseq_gz
-
-python3 /home/groups/herschla/rna_map/scripts/new_scripts/addBarcodeLines.py -i $CPseq -o $outfile -b $barcode_nts
+python3 /home/groups/herschla/rna_map/scripts/new_scripts/addBarcodeLines.py -i $CPseq_gz -o $outfile -b $barcode_nts

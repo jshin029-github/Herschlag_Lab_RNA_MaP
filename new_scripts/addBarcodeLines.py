@@ -28,6 +28,7 @@ if __name__ == "__main__":
     #read in the active columns of the CPSeq to be edited
     CPseq = pd.read_csv(CPseq_filename,
                         delimiter="\t",
+                        compression="gzip",
                         index_col = False,
                         usecols = [0, 1, 2, 3, 4, 5],
                         names = ["location", "exp", "R1", "QR1", "R2", "QR2"]
