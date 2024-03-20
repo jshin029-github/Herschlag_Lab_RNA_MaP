@@ -37,16 +37,12 @@
 
 
 module load python/2.7.13
-# Old
-#source /scratch/groups/herschla/roy-test/env/bin/activate
-
-# New
-source /home/groups/herschla/rna_map/scripts/new_scripts/env/bin/activate
+source $SCRIPT_DIR/env/bin/activate
 
 # Load matlab
 module load matlab/R2017b
 
-MATLABPATH=/home/groups/herschla/rna_map/scripts/image_processing_scripts/CPlibs:/home/groups/herschla/rna_map/scripts/image_processing_scripts/CPscripts
+MATLABPATH="$IMAGING_DIR/CPlibs:$IMAGING_DIR/CPscripts"
 
 export MATLABPATH
 
@@ -94,7 +90,7 @@ do
     start_time=$SECONDS
     echo "Starting quantification for $image_dir at timepoint $d_base..."
 
-    srun python /home/groups/herschla/rna_map/scripts/image_processing_scripts/CPscripts/quantifyTilesDownstream.py \
+    srun python $IMAGING_DIR/CPscripts/quantifyTilesDownstream.py \
         -id $image_dir -ftd $seq_dir -rod $roff_dir -fd $fluor_dir -n $num_cores \
         -rs $reg_subset0 \
         -sf $data_scaling -gv $gv_path 1> $log_file 2> $err_file
