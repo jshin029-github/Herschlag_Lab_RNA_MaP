@@ -53,13 +53,13 @@ normalize=$2
 
 
 ###### OTHER VARIABLES ####
-KdScripts=$'/home/groups/herschla/rna_map/scripts/array_fitting_tools/bin'
+KdScripts=$ARRAY_TOOLS_DIR/bin
 ###########################
 
 
 ###### BEGIN SCRIPT #######
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/env/bin/activate
+source $py2env/bin/activate
 
 # How to call python script:
 # Usage: python $SCRIPT_DIR/normalizeSeries.py -b [Green CPseries] -r [Red CPseries] -out [Norm CPseries]
