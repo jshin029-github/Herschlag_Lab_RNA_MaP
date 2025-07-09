@@ -65,7 +65,7 @@ fi
 
 ###### OTHER VARIABLES ####
 N_tiles=18
-script_dir="/home/groups/herschla/rna_map/scripts/new_scripts"
+script_dir=$SCRIPT_DIR
 ###########################
 
 
@@ -80,7 +80,7 @@ color=$2
 ###### BEGIN SCRIPT #######
 # Setup env
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_2_7_13/bin/activate
+source $py2env/bin/activate
 
 
 dir_list=()
