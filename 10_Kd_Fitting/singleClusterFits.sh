@@ -37,6 +37,6 @@
 
 
 module load python/2.7.13
-source /home/groups/herschla/rna_map/scripts/new_scripts/venv_2_7_13/bin/activate
+source $py2env/bin/activate
 
-python /home/groups/herschla/rna_map/scripts/array_fitting_tools/bin/singleClusterFits.py -b anyRNA_normed_AllRed.CPseries.gz -x concentrations_corrected.txt -out anyRNA_normed_AllRed.CPfitted.gz
+python $ARRAY_TOOLS_DIR/bin/singleClusterFits.py -b anyRNA_normed_AllRed.CPseries.gz -x concentrations_corrected.txt -out anyRNA_normed_AllRed.CPfitted.gz
